@@ -1,5 +1,7 @@
+import AppRouter from "./router";
+
 function App() {
-  return <div className="bg-zinc-400"> Hello World</div>;
+  return <AppRouter />;
 }
 
 export default App;
