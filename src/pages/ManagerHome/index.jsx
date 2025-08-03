@@ -1,72 +1,82 @@
+import { Link } from "react-router";
+import Course from "./Course";
+import Student from "./Student";
+
 export default function ManagerHomePage() {
   return (
-    <div className="relative flex flex-col flex-1 p-[10px]">
-      <div className="absolute w-[calc(100%-20px)] min-h-[calc(100vh-20px)] h-[calc(100%-20px)] bg-[#060A23] -z-10 rounded-[20px]">
-        <img src="assets/images/backgrounds/background-glow.png" className="absolute bottom-0 transform -translate-x-1/2 left-1/2" alt="" />
-      </div>
-      <nav className="flex items-center justify-between p-[30px]">
-        <div className="flex items-center gap-[60px]">
-          <img src="assets/images/logos/logo.svg" className="flex shrink-0" alt="logo" />
-          <ul className="flex items-center gap-10">
-            <li className="font-semibold transition-all duration-300 hover:text-[#662FFF] text-white">
-              <a href="#">Home</a>
-            </li>
-            <li className="font-semibold transition-all duration-300 hover:text-[#662FFF] text-white">
-              <a href="pricing.html">Pricing</a>
-            </li>
-            <li className="font-semibold transition-all duration-300 hover:text-[#662FFF] text-white">
-              <a href="#">Features</a>
-            </li>
-            <li className="font-semibold transition-all duration-300 hover:text-[#662FFF] text-white">
-              <a href="#">Testimonials</a>
-            </li>
-          </ul>
+    <>
+      <header className="flex items-center justify-between gap-[30px]">
+        <div>
+          <h1 className="font-extrabold text-[28px] leading-[42px]">Overview</h1>
+          <p className="text-[#838C9D] mt-[1]">Grow your company quickly</p>
         </div>
         <div className="flex items-center gap-3">
-          <a href="signin.html">
-            <div className="flex items-center gap-3 w-fit rounded-full border p-[14px_20px] transition-all duration-300 hover:bg-[#662FFF] hover:border-[#8661EE] hover:shadow-[-10px_-6px_10px_0_#7F33FF_inset] bg-[#070B24] border-[#24283E] shadow-[-10px_-6px_10px_0_#181A35_inset]">
-              <span className="font-semibold text-white">My Dashboard</span>
+          <Link to="#" className="w-fit rounded-full border border-[#060A23] p-[14px_20px] font-semibold text-nowrap">
+            Customize
+          </Link>
+          <Link to="#" className="w-fit rounded-full p-[14px_20px] font-semibold text-[#FFFFFF] bg-[#662FFF] text-nowrap">
+            Export Data
+          </Link>
+        </div>
+      </header>
+      <section id="Stats" className="flex rounded-[30px] p-[30px] gap-[30px] bg-[#F8FAFB]">
+        <div className="grid grid-cols-2 w-[500px] gap-[30px]">
+          <div className="flex flex-col rounded-[20px] p-5 gap-5 bg-white shadow-[0_4px_4px_0_#E0E2EF]">
+            <img src="/assets/images/icons/profile-2user-purple.svg" className="w-[46px] h-[46px]" alt="icon" />
+            <div>
+              <p className="font-extrabold text-2xl leading-[36px]">189,498</p>
+              <p className="text-[#838C9D]">Total Students</p>
             </div>
-          </a>
-          <a href="signup.html">
-            <div className="flex items-center gap-3 w-fit rounded-full border p-[14px_20px] transition-all duration-300 hover:bg-[#662FFF] hover:border-[#8661EE] hover:shadow-[-10px_-6px_10px_0_#7F33FF_inset] bg-[#662FFF] border-[#8661EE] shadow-[-10px_-6px_10px_0_#7F33FF_inset]">
-              <span className="font-semibold text-white">Sign Up</span>
+          </div>
+          <div className="flex flex-col rounded-[20px] p-5 gap-5 bg-white shadow-[0_4px_4px_0_#E0E2EF]">
+            <img src="/assets/images/icons/note-favorite-purple.svg" className="w-[46px] h-[46px]" alt="icon" />
+            <div>
+              <p className="font-extrabold text-2xl leading-[36px]">7,221</p>
+              <p className="text-[#838C9D]">Total Courses</p>
             </div>
-          </a>
-        </div>
-      </nav>
-      <form action="pricing.html" className="flex flex-col w-[400px] h-fit rounded-[20px] border border-[#262A56] p-[30px] gap-[30px] bg-[#080A2A] m-auto">
-        <div>
-          <h1 className="font-bold text-[26px] leading-[39px] text-white">Welcome Back!</h1>
-          <p className="text-[#6B6C7F]">Manage your employees easily</p>
-        </div>
-        <hr className="border-[#262A56]" />
-        <div className="flex items-center gap-3 w-full rounded-full border p-[14px_20px] transition-all duration-300 focus-within:border-[#8661EE] focus-within:shadow-[-10px_-6px_10px_0_#7F33FF_inset] bg-[#070B24] border-[#24283E] shadow-[-10px_-6px_10px_0_#181A35_inset]">
-          <img src="assets/images/icons/sms-white.svg" className="w-6 h-6 flex shrink-0" alt="icon" />
-          <input type="email" name="email" id="email" className="appearance-none outline-none !bg-transparent w-full font-semibold text-white placeholder:font-normal placeholder:text-[#6B6C7F]" placeholder="Write your email address" />
-        </div>
-        <div>
-          <div className="flex items-center gap-3 w-full rounded-full border p-[14px_20px] transition-all duration-300 focus-within:border-[#8661EE] focus-within:shadow-[-10px_-6px_10px_0_#7F33FF_inset] bg-[#070B24] border-[#24283E] shadow-[-10px_-6px_10px_0_#181A35_inset]">
-            <img src="assets/images/icons/key-white.svg" className="w-6 h-6 flex shrink-0" alt="icon" />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              className="appearance-none outline-none !bg-transparent w-full font-semibold text-white placeholder:font-normal placeholder:text-[#6B6C7F]"
-              placeholder="Type your secure password"
-            />
           </div>
-          <div className="flex justify-end mt-[10px]">
-            <a href="#" className="text-sm leading-[21px] text-[#662FFF] hover:underline">
-              Forgot Password
-            </a>
+          <div className="flex flex-col rounded-[20px] p-5 gap-5 bg-white shadow-[0_4px_4px_0_#E0E2EF]">
+            <img src="/assets/images/icons/video-play-purple.svg" className="w-[46px] h-[46px]" alt="icon" />
+            <div>
+              <p className="font-extrabold text-2xl leading-[36px]">893,891</p>
+              <p className="text-[#838C9D]">Video Content</p>
+            </div>
+          </div>
+          <div className="flex flex-col rounded-[20px] p-5 gap-5 bg-white shadow-[0_4px_4px_0_#E0E2EF]">
+            <img src="/assets/images/icons/note-purple.svg" className="w-[46px] h-[46px]" alt="icon" />
+            <div>
+              <p className="font-extrabold text-2xl leading-[36px]">12,812</p>
+              <p className="text-[#838C9D]">Text Content</p>
+            </div>
           </div>
         </div>
-        <hr className="border-[#262A56]" />
-        <button type="submit" className="w-full rounded-full border p-[14px_20px] text-center font-semibold text-white bg-[#662FFF] border-[#8661EE] shadow-[-10px_-6px_10px_0_#7F33FF_inset]">
-          Sign In to Manage
-        </button>
-      </form>
-    </div>
+        <div className="flex flex-col flex-1 rounded-[20px] p-5 gap-5 bg-white shadow-[0_4px_4px_0_#E0E2EF]">
+          <div className="relative flex items-center justify-center shrink-0 m-auto rounded-full w-[230px] h-[230px]">
+            <div className="absolute rounded-full w-[230px] h-[230px] z-10" style={{ background: "conic-gradient(#C2ACFF 0% 25%, #662FFF 25% 100%)" }}></div>
+            <div className="flex justify-center items-center w-[130px] h-[130px] rounded-full bg-white z-10">
+              <p className="w-fit h-fit text-center font-bold text-lg leading-[27px]">
+                Our
+                <br />
+                Rapport
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-[10px]">
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 rounded-full bg-[#662FFF]"></div>
+              <p className="font-semibold text-sm leading-[21px]">Completed 75%</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 rounded-full bg-[#C2ACFF]"></div>
+              <p className="font-semibold text-sm leading-[21px]">Not Completed 25%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className="grid grid-cols-2 gap-[30px]">
+        <Course />
+        <Student />
+      </div>
+    </>
   );
 }
