@@ -11,6 +11,8 @@ import DetailCourse from "../pages/manager/course-detail";
 import ContentCreatePage from "../pages/manager/course-content-create/ContentCreatePage";
 import PreviewCoursePage from "../pages/manager/course-preview/PreviewCoursePage";
 import ManageStudentPage from "../pages/manager/students/ManageStudentPage";
+import StudentHomePage from "../pages/student/overview-student-page/StudentHomePage";
+
 
 export default function AppRouter() {
   return (
@@ -28,6 +30,10 @@ export default function AppRouter() {
           <Route path="/manager/courses/:id/create" element={<ContentCreatePage />} />
           <Route path="/manager/courses/:id/preview" element={<PreviewCoursePage />} />
           <Route path="/manager/students" element={<ManageStudentPage />} />
+        </Route>
+        <Route path="/student" element={<Layout isAdmin={false} />}>
+          <Route index element={<StudentHomePage />} />
+          <Route path="/student/courses/:id" element={<PreviewCoursePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
